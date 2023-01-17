@@ -92,7 +92,7 @@ public class Ex23 {
             if(lstPos.indexOf(pos) != -1) {
                 sortieBoucle = true;
                 break;
-            } 
+            }
             lstPos.add(pos);
         }
     }

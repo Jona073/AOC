@@ -20,7 +20,7 @@ public class Ex1 {
                 String chaines[] = line.split(", ");
 
                 for (String chaine: chaines) {
-                    tourne = chaine.toCharArray()[0];
+                    tourne = chaine.charAt(0);
                     distance = Integer.parseInt(chaine.substring(1));
                     if(tourne == 'R') {
                         switch (direction) {
