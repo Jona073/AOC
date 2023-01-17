@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ex2 {
+public class Ex22 {
 
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2016/Day1/Chemin.txt"))) {
@@ -15,12 +15,13 @@ public class Ex2 {
             char tourne;
             String pos;
             //H B G D
-            int[] tabDistance = new int[4];
+            int[] tabDistance = new int[2];
             List<String> lstPos = new ArrayList<>();
 
             int distanceTT;
 
             while ((line = br.readLine()) != null) {
+                line = "R8, R4, R4, R8";
                 String chaines[] = line.split(", ");
 
                 for (String chaine: chaines) {
@@ -30,12 +31,12 @@ public class Ex2 {
                         switch (direction) {
                             case 'H':
                                 direction = 'D';
-                                tabDistance[3] += distance;
+                                tabDistance[1] += distance;
                                 break;
 
                             case 'B':
                                 direction = 'G';
-                                tabDistance[2] += distance;
+                                tabDistance[1] -= distance;
                                 break;
 
                             case 'G':
@@ -45,7 +46,7 @@ public class Ex2 {
 
                             case 'D':
                                 direction = 'B';
-                                tabDistance[1] += distance;
+                                tabDistance[0] -= distance;
                                 break;
 
                             default:
@@ -55,17 +56,17 @@ public class Ex2 {
                         switch (direction) {
                             case 'H':
                                 direction = 'G';
-                                tabDistance[2] += distance;
+                                tabDistance[1] -= distance;
                                 break;
 
                             case 'B':
                                 direction = 'D';
-                                tabDistance[3] += distance;
+                                tabDistance[1] += distance;
                                 break;
 
                             case 'G':
                                 direction = 'B';
-                                tabDistance[1] += distance;
+                                tabDistance[0] -= distance;
                                 break;
 
                             case 'D':
@@ -78,20 +79,21 @@ public class Ex2 {
                         }
                     }
 
-                    pos = (tabDistance[0] - tabDistance[1]) + "-" + (tabDistance[2] - tabDistance[3]) ;
+                    pos = tabDistance[0] + " - " + tabDistance[1] ;
                     System.out.println(pos);
+
 
                     if(lstPos.indexOf(pos) != -1) {
 
-                        System.out.println("Distance TT: ");
-                        break;
+                        System.out.println("Distance TT: " + pos );
+                      //  break;
                     };
 
                     lstPos.add(pos);
                 }
             }
 
-            distanceTT = Math.abs(tabDistance[0] - tabDistance[1]) + Math.abs(tabDistance[2] - tabDistance[3]);
+            distanceTT = Math.abs(tabDistance[0]) + Math.abs( tabDistance[1]);
 
             System.out.println("Distance TT: " + distanceTT);
 
