@@ -14,13 +14,10 @@ public class Ex23 {
     static int[] tabDistance = new int[2];
     static List<String> lstPos = new ArrayList<>();
     static int distanceTT;
-
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2016/Day1/Chemin.txt"))) {
-
             while ((line = br.readLine()) != null) {
                 String chaines[] = line.split(", ");
-
                 for (String chaine: chaines) {
                     tourne = chaine.toCharArray()[0];
                     distance = Integer.parseInt(chaine.substring(1));
