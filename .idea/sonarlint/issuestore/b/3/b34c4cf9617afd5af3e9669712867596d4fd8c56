@@ -1,0 +1,9 @@
+
+`	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(¯åÕøÿÿÿÿ
+2
+java:S1643*"Use a StringBuilder instead.(òÓ¥½
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¦Íøå
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(Çµí‘
+N	java:S106,"9Replace this use of System.out or System.err by a logger.(´÷’œ
+S	java:S106/"9Replace this use of System.out or System.err by a logger.(¶³Ô ûÿÿÿÿ
