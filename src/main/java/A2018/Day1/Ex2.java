@@ -21,7 +21,6 @@ public class Ex2 {
                     } else {
                         tt -= Integer.parseInt(line.substring(1));
                     }
-
                     if (lstnb.contains(tt)) {
                         System.out.println(i);
                         quitter = true;

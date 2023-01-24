@@ -7,21 +7,16 @@ public class Ex1 {
     public static void main(String[] args) {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2017/Day1/suite.txt"))) {
             char[] line = br.readLine().toCharArray();
-            int tt = 0;
-            for (int i = 0; i < line.length; i++) {
-                if (i+1 < line.length) {
-                    if (Character.getNumericValue(line[i]) == Character.getNumericValue(line[i+1])) {
-                        tt += Character.getNumericValue(line[i]);
-                    }
-                } else {
-                    if(Character.getNumericValue(line[i]) == Character.getNumericValue(line[0])) {
-                        tt += Character.getNumericValue(line[i]);
-                    }
+            int total = 0;
+            for (int index = 0; index < line.length - 1; index++) {
+                if (line[index] == line[index + 1]) {
+                    total += line[index]-'0';
                 }
             }
-
-            System.out.println("Code : " + tt);
-
+            if (Character.getNumericValue(line[line.length - 1]) == Character.getNumericValue(line[0])) {
+                total += Character.getNumericValue(line[0]);
+            }
+            System.out.println("Code : " + total);
         } catch (Exception e) {
             System.err.println("Erreur");
         }
