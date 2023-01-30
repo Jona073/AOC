@@ -1,0 +1,10 @@
+
+[	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(Í·——
+[	java:S112I"FDefine and throw a dedicated exception instead of using a generic one.(Í·——
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ø˜‚şÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Çµí‘
+E
+java:S1197"*Move the array designators [] to the type.(éçÍşÿÿÿÿ
+S	java:S106Q"9Replace this use of System.out or System.err by a logger.(Ó“Òşÿÿÿÿ
+S	java:S106T"9Replace this use of System.out or System.err by a logger.(¶³Ô ûÿÿÿÿ

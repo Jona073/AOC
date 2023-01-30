@@ -5,3 +5,15 @@ R
 "src/main/java/A2016/Day1/Ex23.java,7\5\7590557c7248d8a2a17f451ef3c1925aee44e31d
 Q
 !src/main/java/A2016/Day2/Ex2.java,b\3\b34c4cf9617afd5af3e9669712867596d4fd8c56
+Q
+!src/main/java/A2016/Day2/Ex1.java,a\6\a6cc304410328b35487287df90182acdd7be327d
+Q
+!src/main/java/A2016/Day2/Code.txt,8\1\81c4cd04b2b6045e015b358db1a53a5f95a3a02a
+Q
+!src/main/java/A2016/Day1/Ex1.java,d\7\d707cd7dc1767ef92b8a3ed1415098029223fd9a
+R
+"src/main/java/A2017/Day2/input.txt,5\d\5ddb212b6cdd11a30fd5adb049dbe958b3e375e5
+Q
+!src/main/java/A2017/Day2/Ex2.java,9\7\9740ca3f1ce58733481accaaef3055896740b832
+Q
+!src/main/java/A2017/Day2/Ex1.java,f\7\f74939f5a90d61a81c76370ecf829089ec2a99ff
