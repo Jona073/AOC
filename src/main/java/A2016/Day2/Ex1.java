@@ -1,7 +1,6 @@
 package A2016.Day2;
 
 import java.io.BufferedReader;
-import java.io.Console;
 import java.io.FileReader;
 
 public class Ex1 {
@@ -36,11 +35,7 @@ public class Ex1 {
                             }
                             break;
                         default:
-                            throw new RuntimeException();
-                    }
-                    if (pos > 8)
-                    {
-                        pos = pos;
+                            throw new IllegalArgumentException("Valeur Impossible : " + dir);
                     }
                 }
 

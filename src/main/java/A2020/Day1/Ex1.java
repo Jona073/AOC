@@ -10,15 +10,15 @@ public class Ex1 {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2020/Day1/input.txt"))) {
             String line;
             int result = 0;
-            List<Integer> lstnb = new ArrayList<>();
+            List<Integer> lstNb = new ArrayList<>();
             while ((line = br.readLine()) != null) {
-                lstnb.add(Integer.parseInt(line));
+                lstNb.add(Integer.parseInt(line));
             }
 
-            for (int i = 0; i < lstnb.size()-2; i++) {
-                for (int j = i+1; j < lstnb.size()-1; j++) {
-                   if (lstnb.get(i) + lstnb.get(j) == 2020) {
-                       result = lstnb.get(i) * lstnb.get(j);
+            for (int i = 0; i < lstNb.size()-2; i++) {
+                for (int j = i+1; j < lstNb.size()-1; j++) {
+                   if (lstNb.get(i) + lstNb.get(j) == 2020) {
+                       result = lstNb.get(i) * lstNb.get(j);
                        break;
                    }
                 }
