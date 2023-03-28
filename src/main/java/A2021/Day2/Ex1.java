@@ -9,7 +9,9 @@ public class Ex1 {
             String line;
             Submarine s1 = new Submarine();
             while ((line = br.readLine()) != null) {
-                s1.move(line.split(" ")[0], Integer.parseInt(line.split(" ")[1]));
+                String[] informations = line.split(" ");
+                // [typemove X]
+                s1.move(informations[0], Integer.parseInt(informations[1]));
             }
             System.out.println(s1.calculCoordonate());
         } catch (Exception e) {

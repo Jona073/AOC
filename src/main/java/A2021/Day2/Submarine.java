@@ -1,25 +1,12 @@
 package A2021.Day2;
 
 public class Submarine {
-    private int depth;
-    private int horizontalPosition;
-
-    public int getDepth() {
-        return depth;
-    }
-
-    public int getHorizontalPosition() {
-        return horizontalPosition;
-    }
+    protected int depth;
+    protected int horizontalPosition;
 
     public Submarine() {
         this.depth = 0;
         this.horizontalPosition = 0;
-    }
-
-    public Submarine(int depth, int horizontalPosition) {
-        this.depth = depth;
-        this.horizontalPosition = horizontalPosition;
     }
 
     public void move(String typeMove, int number) {
@@ -38,11 +25,11 @@ public class Submarine {
         }
     }
 
-    public void moveDeep(int number) {
+    protected void moveDeep(int number) {
         this.depth += number;
     }
 
-    public void moveHorizontal(int number) {
+    protected void moveHorizontal(int number) {
         this.horizontalPosition += number;
     }
 
