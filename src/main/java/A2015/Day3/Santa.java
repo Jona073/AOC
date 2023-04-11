@@ -4,14 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Santa {
-    private Coordonate position;
+    private final Coordonate position;
 
-    private List<Coordonate> visitedHouse;
+    private final List<Coordonate> visitedHouse;
 
-    public Santa(List<Coordonate> visitedHouse) {
-        this.visitedHouse = new ArrayList<>();
-        this.visitedHouse.addAll(visitedHouse);
-    }
 
     public Santa() {
         this.position = new Coordonate();
@@ -49,8 +45,7 @@ public class Santa {
     }
 
     public List<Coordonate> getVisitedHouse() {
-        List<Coordonate> listCoordonate = new ArrayList<>(this.visitedHouse);
-        return listCoordonate;
+        return new ArrayList<>(this.visitedHouse);
     }
 
     public void doRoad(String road) {

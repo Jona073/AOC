@@ -4,35 +4,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SantaTeam {
-    private List<Santa> santaTeam;
-
-    public SantaTeam(List<Santa> santaTeam) {
-        this.santaTeam = santaTeam;
-    }
+    private final List<Santa> team;
 
     public SantaTeam() {
-        this.santaTeam = new ArrayList<>();
+        this.team = new ArrayList<>();
     }
 
     public void addSanta(Santa s) {
-        this.santaTeam.add(s);
+        this.team.add(s);
     }
 
     public int numberSanta() {
-        return this.santaTeam.size();
+        return this.team.size();
     }
 
     public void teamRoad(String road) {
         for (int i = 0; i < road.length(); i++ ) {
-            this.santaTeam.get(i%this.numberSanta()).move(road.charAt(i));
+            this.team.get(i%this.numberSanta()).move(road.charAt(i));
         }
     }
 
     public int allVisitedHoused() {
         Santa bigSANTAAAA = new Santa();
-        bigSANTAAAA.addListHouseVisited(this.santaTeam.get(0).getVisitedHouse());
+        bigSANTAAAA.addListHouseVisited(this.team.get(0).getVisitedHouse());
         for (int i = 1; i < this.numberSanta(); i++) {
-            for (Coordonate house : this.santaTeam.get(i).getVisitedHouse()) {
+            for (Coordonate house : this.team.get(i).getVisitedHouse()) {
                 bigSANTAAAA.checkVisitedHouse(house);
             }
         }
