@@ -1,6 +1,11 @@
 package A2017.Day3;
 
 public class Ex1 {
+    /**
+     * test
+     * @param args
+     * @return
+     */
     public static void main(String[] args) {
         int input = 347991;
         int longueur = 1;
@@ -17,7 +22,9 @@ public class Ex1 {
         int nombreMaxCote = 0;
         int milieuCote = 0;
 
-        //Voir qu'elle côté il est (AB-BC-CD-DA)
+        //Voir de quel côté il est (AB-BC-CD-DA)
+        // A  B
+        // D  C
         //DA = nbMAX ---- CD = nbmax-longueur ---- BC = nbmax-2longueur ---- AB = nbmax-3longueur
         for (int i = 0; i < 4; i++) {
             if (nbMax -i * (longueur-1) < input) {
