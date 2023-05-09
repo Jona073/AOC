@@ -13,7 +13,7 @@ public class Tissu {
         return id;
     }
 
-    public Tissu(int largeur, int longueur, int espaceHorizontal, int espaceVertical, int id) {
+    public void populate(int largeur, int longueur, int espaceHorizontal, int espaceVertical, int id) {
         this.id = id;
         for (int i = 0 ; i < largeur; i++) {
             for (int j = 0; j < longueur; j++) {
@@ -27,14 +27,13 @@ public class Tissu {
     }
 
     public Tissu(String input) {
-        /*
         int espaceHorizontal = Integer.parseInt(input.split("@")[1].split(",")[0].trim());
         int espaceVertical = Integer.parseInt(input.split(",")[1].split(":")[0].trim());
         int largeur = Integer.parseInt(input.split(":")[1].split("x")[0].trim());
         int longueur = Integer.parseInt(input.split("x")[1].trim());
         int id = Integer.parseInt(input.split("#")[1].split("@")[0].trim());
-         */
-        this(Integer.parseInt(input.split(":")[1].split("x")[0].trim()),Integer.parseInt(input.split("x")[1].trim()),Integer.parseInt(input.split("@")[1].split(",")[0].trim()),Integer.parseInt(input.split(",")[1].split(":")[0].trim()),Integer.parseInt(input.split("#")[1].split("@")[0].trim()));
+
+        populate(largeur,longueur,espaceHorizontal,espaceVertical,id);
     }
 
     @Override

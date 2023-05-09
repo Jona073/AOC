@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Draps {
@@ -24,7 +25,7 @@ public class Draps {
         }
 
         Set<Coordonnee> lstUnique = new HashSet<>();
-        return coordonnees.stream().filter(e -> !lstUnique.add(e)).collect(Collectors.toSet());
+        return coordonnees.stream().filter(Predicate.not(lstUnique::add)).collect(Collectors.toSet());
 
     }
 
@@ -37,7 +38,7 @@ public class Draps {
         Set<Coordonnee> coordonnees = new HashSet<>(this.coordonneeChevauche());
 
         for (Tissu tissu : this.tissues) {
-            if (tissu.getLstCoordonnes().stream().noneMatch(e -> coordonnees.contains(e))) {
+            if (tissu.getLstCoordonnes().stream().noneMatch(coordonnees::contains)) {
                 return tissu.getId();
             }
         }

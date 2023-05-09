@@ -10,13 +10,10 @@ public class Ex1 {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2018/Day3/input.txt"))) {
             String line;
             List<String> inputs = new ArrayList<>();
-
             while ((line = br.readLine()) != null) {
                 inputs.add(line);
             }
-
             Draps draps = new Draps(inputs);
-
 
             System.out.println(" Result : " + draps.nbChevauche());
 
