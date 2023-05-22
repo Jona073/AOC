@@ -45,3 +45,5 @@ R
 "src/main/java/A2019/Day3/input.txt,c\e\ce4180975c59e35d45494e54fd0c841e10d4aa28
 Q
 !src/main/java/A2020/Day2/Ex1.java,b\5\b5abe41bd71a7757f93aac75a3836a62109867af
+R
+"src/main/java/A2021/Day3/input.txt,e\f\ef39ec585fd938c3b0b584e2287e1445f6112555

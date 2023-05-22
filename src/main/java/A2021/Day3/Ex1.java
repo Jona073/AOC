@@ -18,14 +18,13 @@ public class Ex1 {
             System.out.println("Gamme : " + resGamma);
             String resEpsilon = epsilon(bits);
             System.out.println("Epsilon : " + resEpsilon);
-            int result = Integer.parseInt(resEpsilon,2) * Integer.parseInt(resGamma,2);
+            int result = Integer.parseInt(resEpsilon, 2) * Integer.parseInt(resGamma, 2);
             System.out.println(result);
 
-            System.out.println(" oxygen : " + oxygen(bits,0));
-            System.out.println(" co2 : " + co2(bits,0));
+            System.out.println(" oxygen : " + oxygen(bits, 0));
+            System.out.println(" co2 : " + co2(bits, 0));
 
-            System.out.println(Integer.parseInt(oxygen(bits,0),2) * Integer.parseInt(co2(bits,0),2));
-
+            System.out.println(Integer.parseInt(oxygen(bits, 0), 2) * Integer.parseInt(co2(bits, 0), 2));
 
 
         } catch (Exception e) {
@@ -56,7 +55,7 @@ public class Ex1 {
         int[] numberOf1 = tabNumberOf1(bits);
 
         for (int i = 0; i < lenghtLine; i++) {
-            if (numberOf1[i] >= Math.round((float)lenghtList/2)) {
+            if (numberOf1[i] >= Math.round((float) lenghtList / 2)) {
                 resGamma.append("1");
             } else {
                 resGamma.append("0");
@@ -72,7 +71,7 @@ public class Ex1 {
         int lenghtList = bits.size();
 
         for (int i = 0; i < lenghtLine; i++) {
-            if (numberOf1[i] < Math.round((float)lenghtList/2)) {
+            if (numberOf1[i] < Math.round((float) lenghtList / 2)) {
                 resGamma.append("1");
             } else {
                 resGamma.append("0");
@@ -82,39 +81,34 @@ public class Ex1 {
     }
 
     public static String oxygen(List<String> bits, int pos) {
+        if (bits.size() <= 1) {
+            return bits.get(0);
+        }
         List<String> bitsCopy = new ArrayList<>(bits);
         String resGamma = gamma(bitsCopy);
         for (String bit :
                 bits) {
-            if(bit.charAt(pos) != resGamma.charAt(pos)) {
+            if (bit.charAt(pos) != resGamma.charAt(pos)) {
                 bitsCopy.remove(bit);
             }
         }
-
-        if (bitsCopy.size() == 1) {
-            return bitsCopy.get(0);
-        } else {
-            return oxygen(bitsCopy,pos + 1);
-        }
+        return oxygen(bitsCopy, pos + 1);
     }
 
     public static String co2(List<String> bits, int pos) {
+        if (bits.size() <= 1) {
+            return bits.get(0);
+        }
         List<String> bitsCopy = new ArrayList<>(bits);
         String resEpsilon = epsilon(bitsCopy);
         for (String bit :
                 bits) {
-            if(bit.charAt(pos) != resEpsilon.charAt(pos)) {
+            if (bit.charAt(pos) != resEpsilon.charAt(pos)) {
                 bitsCopy.remove(bit);
             }
         }
-
-        if (bitsCopy.size() == 1) {
-            return bitsCopy.get(0);
-        } else {
-            return co2(bitsCopy,pos + 1);
-        }
+            return co2(bitsCopy, pos + 1);
     }
-
 
 
 }
