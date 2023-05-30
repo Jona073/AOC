@@ -50,12 +50,4 @@ R
 Q
 !src/main/java/A2021/Day3/Ex1.java,b\a\bacb779790cae7dd048f17f3c26e6da1f3264608
 Q
-!src/main/java/A2015/Day4/Ex1.java,d\c\dc37270dade1e8e1583bb78bd2b45a30d01299b0
-Q
 !src/main/java/A2016/Day3/Ex1.java,a\f\af8513b7e731002eabd53e0fa6d04919be60c0ec
-R
-"src/main/java/A2016/Day4/Room.java,e\a\ea1ea2e379ab08bd4c44736ba309ae5f59737b6a
-R
-"src/main/java/A2016/Day4/input.txt,1\f\1f14615e71d1bf1bc26eabb6b87bf583c19fa04f
-Q
-!src/main/java/A2016/Day4/Ex1.java,b\1\b15088f06d887bcb9c26c324a1178608c1662835

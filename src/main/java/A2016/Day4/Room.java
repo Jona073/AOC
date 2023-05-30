@@ -1,7 +1,6 @@
 package A2016.Day4;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -42,16 +41,13 @@ public class Room {
 
     private static List<Map.Entry<Character, Integer>> sortByValue(Map<Character, Integer> unsortMap) {
         List<Map.Entry<Character, Integer>> list =
-                new LinkedList<Map.Entry<Character, Integer>>(unsortMap.entrySet());
+                new LinkedList<>(unsortMap.entrySet());
 
-        list.sort(new Comparator<Map.Entry<Character, Integer>>() {
-            public int compare(Map.Entry<Character, Integer> o1,
-                               Map.Entry<Character, Integer> o2) {
-                if (!Objects.equals(o1.getValue(), o2.getValue())) {
-                    return (o1.getValue()).compareTo(o2.getValue());
-                } else {
-                    return (o2.getKey()).compareTo(o1.getKey());
-                }
+        list.sort((o1, o2) -> {
+            if (!Objects.equals(o1.getValue(), o2.getValue())) {
+                return (o1.getValue()).compareTo(o2.getValue());
+            } else {
+                return (o2.getKey()).compareTo(o1.getKey());
             }
         });
         Collections.reverse(list);
@@ -70,7 +66,7 @@ public class Room {
             if (carac == '-') {
                 carac = ' ';
             } else {
-                carac = (char) ((carac + (this.id % 26)));
+                carac = (char) (carac + (this.id % 26));
                 if (carac > 'z') {
                     carac = (char) (carac - 'z' + 'a'-1);
                 }

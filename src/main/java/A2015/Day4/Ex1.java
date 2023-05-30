@@ -33,9 +33,7 @@ public class Ex1 {
 
     public static String MD5(String txt) throws NoSuchAlgorithmException {
         MessageDigest m = MessageDigest.getInstance("MD5");
-        m.reset();
-        m.update(txt.getBytes());
-        byte[] digest = m.digest();
+        byte[] digest = m.digest(txt.getBytes());
         BigInteger bigInt = new BigInteger(1,digest);
         StringBuilder hashtext = new StringBuilder(bigInt.toString(16));
         while(hashtext.length() < 32 ){
