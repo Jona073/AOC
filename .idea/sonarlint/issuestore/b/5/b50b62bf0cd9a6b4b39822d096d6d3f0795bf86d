@@ -1,0 +1,12 @@
+
+2
+java:S1700	"Rename field "action"(ÃĞ”“8¾µóŸ‹1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›ŠÖşÿÿÿÿ8¿µóŸ‹1
+I
+java:S5856"'Fix the syntax error inside this regex.(·°†çøÿÿÿÿ8ÎµóŸ‹1
+I
+java:S5856"'Fix the syntax error inside this regex.(ªõÛšøÿÿÿÿ8ÏµóŸ‹1
+D
+java:S5856"'Fix the syntax error inside this regex.(µú–³8ĞµóŸ‹1
+[
+java:S1117,"9Rename "action" which hides the field declared at line 9.(üïÆÿÿÿÿÿ8ÖµóŸ‹1

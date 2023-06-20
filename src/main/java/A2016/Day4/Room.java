@@ -18,17 +18,17 @@ public class Room {
     private String code;
 
     public Room(String input) {
-        this.id = Integer.parseInt(input.substring(input.length()-10,input.length()-7));
+        this.id = Integer.parseInt(input.substring(input.length() - 10, input.length() - 7));
         this.code = input.split("\\[")[1].split("]")[0];
-        this.chaine = String.join("",input.split("\\[")[0].split("[^a-z]"));
+        this.chaine = String.join("", input.split("\\[")[0].split("[^a-z]"));
     }
 
     public String computeCode() {
-        Map<Character,Integer> numbersCaracs = new HashMap<>();
+        Map<Character, Integer> numbersCaracs = new HashMap<>();
         for (char carac :
                 this.chaine.toCharArray()) {
             int count = numbersCaracs.getOrDefault(carac, 0);
-            numbersCaracs.put(carac,count+1);
+            numbersCaracs.put(carac, count + 1);
         }
         List<Map.Entry<Character, Integer>> sortList = sortByValue(numbersCaracs);
 
@@ -68,7 +68,7 @@ public class Room {
             } else {
                 carac = (char) (carac + (this.id % 26));
                 if (carac > 'z') {
-                    carac = (char) (carac - 'z' + 'a'-1);
+                    carac = (char) (carac - 'z' + 'a' - 1);
                 }
             }
             message.append(carac);
