@@ -1,0 +1,10 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŒÕã¢úÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ý…Õ˜
+m
+java:S3776A"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ýÆ’åûÿÿÿÿ
+W
+java:S1126k"AReplace this if-then-else statement by a single return statement.(¢ü©§
+C
+java:S1068"-Remove this unused "countryID" private field.(€Ô×Þ
