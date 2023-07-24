@@ -20,9 +20,20 @@ public class Ex1 {
 
             position = 0;
             while(numbers.containsKey(position)) {
-                numbers.replace(position,numbers.get(position)+1);
-                //Car faut pas prendre en compte l'incrémentation
-                position+= numbers.get(position) -1;
+                //Partie 1
+//                numbers.replace(position,numbers.get(position)+1);
+//                //Car faut pas prendre en compte l'incrémentation
+//                position+= numbers.get(position) -1;
+//                step++;
+
+                //Partie 2
+                if(numbers.get(position) >=3 ) {
+                    numbers.replace(position,numbers.get(position)-1);
+                    position+= numbers.get(position) +1;
+                } else {
+                    numbers.replace(position,numbers.get(position)+1);
+                    position+= numbers.get(position) -1;
+                }
                 step++;
             }
 
