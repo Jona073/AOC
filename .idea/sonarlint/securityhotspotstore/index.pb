@@ -41,16 +41,8 @@ R
 "src/main/java/A2019/Day3/input.txt,c\e\ce4180975c59e35d45494e54fd0c841e10d4aa28
 R
 "src/main/java/A2021/Day3/input.txt,e\f\ef39ec585fd938c3b0b584e2287e1445f6112555
-Q
-!src/main/java/A2016/Day3/Ex1.java,a\f\af8513b7e731002eabd53e0fa6d04919be60c0ec
-Q
-!src/main/java/A2016/Day4/Ex1.java,b\1\b15088f06d887bcb9c26c324a1178608c1662835
 R
 "src/main/java/A2020/Day4/input.txt,2\e\2eb22826da70e6ef35b2c40a1ecb267a862534a6
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 Q
 !src/main/java/A2020/Day4/Ex1.java,d\7\d790d5c52d86a84da233551d1429ac8ca9d40ce4
 Q
