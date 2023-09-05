@@ -32,28 +32,47 @@ public class Segment {
 
     public List<Point> getAllPoint() {
         List<Point> points = new ArrayList<>();
+        int maxX = this.fin.getX();
+        int minX = this.debut.getX();
+        if (this.debut.getX() > this.fin.getX()) {
+            maxX = this.debut.getX();
+            minX = this.fin.getX();
+        }
+        int maxY = this.fin.getY();
+        int minY = this.debut.getY();
+        if (this.debut.getY() > this.fin.getY()) {
+            maxY = this.debut.getY();
+            minY = this.fin.getY();
+        }
         if (this.isVerticalOrHorizontalLine() == -1) {
-            int max = this.fin.getX();
-            int min = this.debut.getX();
-            if (this.debut.getX() > this.fin.getX()) {
-                max = this.debut.getX();
-                min = this.fin.getX();
-            }
-            for (int i = min; i <= max; i++) {
+
+            for (int i = minX; i <= maxX; i++) {
                 Point point = new Point(i,this.debut.getY());
                 points.add(point);
             }
 
         } else if (this.isVerticalOrHorizontalLine() == 1) {
-            int max = this.fin.getY();
-            int min = this.debut.getY();
-            if (this.debut.getY() > this.fin.getY()) {
-                max = this.debut.getY();
-                min = this.fin.getY();
-            }
-            for (int i = min; i <= max; i++) {
+
+            for (int i = minY; i <= maxY; i++) {
                 Point point = new Point(this.debut.getX(),i);
                 points.add(point);
+            }
+        } else {
+            int difX = maxX - minX;
+            int difY = maxY - minY;
+            if(difX == difY) {
+                for (int i = 0; i <= difX; i++) {
+                    int xPas = i;
+                    if (minX != this.debut.getX()) {
+                        xPas = -i;
+                    }
+                    int yPas = i;
+                    if (minY != this.debut.getY()) {
+                        yPas = -i;
+                    }
+                    Point point = new Point(this.debut.getX()+xPas,this.debut.getY()+yPas);
+                    points.add(point);
+                }
             }
         }
         return points;
