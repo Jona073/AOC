@@ -8,10 +8,11 @@ public class Segment {
     private Point fin;
 
     public Segment(String input) {
-        int x1 = Integer.parseInt(input.split(",")[0]);
-        int y1 = Integer.parseInt(input.split(",")[1].split(" ")[0]);
-        int x2 = Integer.parseInt(input.split("-> ")[1].split(",")[0]);
-        int y2 = Integer.parseInt(input.split(",")[2]);
+        String[] tabPartie = input.split(",| -> ");
+        int x1 = Integer.parseInt(tabPartie[0]);
+        int y1 = Integer.parseInt(tabPartie[1]);
+        int x2 = Integer.parseInt(tabPartie[2]);
+        int y2 = Integer.parseInt(tabPartie[3]);
         this.debut = new Point(x1,y1);
         this.fin = new Point(x2,y2);
 
@@ -21,16 +22,16 @@ public class Segment {
     // -1 : vertical
     // 1 : horizontal
     // 0 : rien
-    public int isVerticalOrHorizontalLine() {
+    public TypeSegment isVerticalOrHorizontalLine() {
         if (this.debut.getX() == this.fin.getX()) {
-            return 1;
+            return TypeSegment.HORIZONTAL;
         } else if (this.debut.getY() == this.fin.getY()) {
-            return -1;
+            return TypeSegment.VERTICAL;
         }
-        return 0;
+        return TypeSegment.DIAGONAL;
     }
 
-    public List<Point> getAllPoint() {
+    public List<Point> getAllPoints() {
         List<Point> points = new ArrayList<>();
         int maxX = this.fin.getX();
         int minX = this.debut.getX();
@@ -44,14 +45,14 @@ public class Segment {
             maxY = this.debut.getY();
             minY = this.fin.getY();
         }
-        if (this.isVerticalOrHorizontalLine() == -1) {
+        if (this.isVerticalOrHorizontalLine() == TypeSegment.VERTICAL) {
 
             for (int i = minX; i <= maxX; i++) {
                 Point point = new Point(i,this.debut.getY());
                 points.add(point);
             }
 
-        } else if (this.isVerticalOrHorizontalLine() == 1) {
+        } else if (this.isVerticalOrHorizontalLine() == TypeSegment.HORIZONTAL) {
 
             for (int i = minY; i <= maxY; i++) {
                 Point point = new Point(this.debut.getX(),i);

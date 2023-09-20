@@ -22,7 +22,7 @@ public class Diagram {
         int count = 0;
         List<Point> points = new ArrayList<>();
         for (Segment segment: this.segments) {
-            points.addAll(segment.getAllPoint());
+            points.addAll(segment.getAllPoints());
         }
         Set<Point> uniquePoint = new HashSet<>();
         count = points.stream().filter(Predicate.not(uniquePoint::add)).collect(Collectors.toSet()).size();
