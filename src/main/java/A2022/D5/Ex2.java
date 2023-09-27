@@ -5,18 +5,15 @@ import java.io.FileReader;
 
 public class Ex2 {
     public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/D5/package.txt")))    {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/D5/package.txt"))) {
             String line;
             int nbLigne = 0;
             int nbcolonne = 9;
 
 
-            char tab[][] = new char[nbcolonne][50] ;
-            char c1;
-            char charsv;
+            char tab[][] = new char[nbcolonne][50];
             boolean tst = true;
 
-            int select;
             int nb;
             int from;
             int to;
@@ -25,30 +22,30 @@ public class Ex2 {
             String s;
             String car;
             while ((line = br.readLine()) != null) {
-                if(line.contains("[") ) {
+                if (line.contains("[")) {
                     for (int i = 0; i < nbcolonne; i++) {
-                        if(line.length()>1+i*4) {
-                            car = line.substring(1 + i * 4, 1 + i * 4 +1);
+                        if (line.length() > 1 + i * 4) {
+                            car = line.substring(1 + i * 4, 1 + i * 4 + 1);
                             if (!car.equals(" ")) {
-                                tab[nbcolonne - i-1][nbLigne] = car.charAt(0);
+                                tab[nbcolonne - i - 1][nbLigne] = car.charAt(0);
                             }
                         }
                     }
                 } else if (line.contains("move")) {
-                    if(tst) {
+                    if (tst) {
                         for (int i = 0; i < nbcolonne; i++) {
                             for (int j = 0; j < 49; j++) {
                                 k = 0;
                                 if (tab[i][j] == 0) {
-                                    while(j+k < 49) {
+                                    while (j + k < 49) {
                                         if (tab[i][j + k] != 0) {
-                                            tab[i][j] = tab[i][j+k];
-                                            tab[i][j+k] = 0;
+                                            tab[i][j] = tab[i][j + k];
+                                            tab[i][j + k] = 0;
                                             break;
                                         }
 
                                         k++;
-                                    } ;
+                                    }
                                 }
                             }
                         }
@@ -67,13 +64,13 @@ public class Ex2 {
                     for (int i = 0; i < nb; i++) {
                         //Decaler le to de 1
                         for (int j = 48; j >= 0; j--) {
-                            tab[nbcolonne-to][j+1] = tab[nbcolonne-to][j];
+                            tab[nbcolonne - to][j + 1] = tab[nbcolonne - to][j];
                         }
                         //mettre le from dans le to[1]
-                        tab[nbcolonne-to][0] = tab[nbcolonne-from][nb-i-1];
+                        tab[nbcolonne - to][0] = tab[nbcolonne - from][nb - i - 1];
                         //decaler le from
-                        for (int j = nb-i-1; j < 49; j++) {
-                            tab[nbcolonne-from][j] = tab[nbcolonne-from][j+1];
+                        for (int j = nb - i - 1; j < 49; j++) {
+                            tab[nbcolonne - from][j] = tab[nbcolonne - from][j + 1];
                         }
                     }
 
@@ -82,11 +79,10 @@ public class Ex2 {
                 nbLigne++;
             }
             for (int i = 0; i < nbcolonne; i++) {
-                result += tab[nbcolonne-i-1][0];
+                result += tab[nbcolonne - i - 1][0];
             }
             System.out.println(result);
-        }
-        catch (Exception e ) {
+        } catch (Exception e) {
             System.out.println("Erreur");
         }
     }
