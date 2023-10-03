@@ -43,7 +43,7 @@ public class Bank {
         }
         return -1;
     }
-    
+
     public int computeNumberLoop() {
         int count = 0;
         while(count < Integer.MAX_VALUE) {
