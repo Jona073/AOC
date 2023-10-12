@@ -31,15 +31,16 @@ public class Radio {
     public String computeMostCommonCharacter() {
         StringBuilder result = new StringBuilder();
         List<List<Character>> allSignal = computeAllSignals();
-        for (int i = 0; i < allSignal.size(); i++) {
-            result.append(allSignal.get(i)
+        for (List<Character> characters : allSignal) {
+            char mostCommon = characters
                     .stream()
                     .collect(groupingBy(x -> x, counting()))
                     .entrySet()
                     .stream()
                     .max(comparingByValue())
-                    .get()
-                    .getKey());
+                    .orElseThrow()
+                    .getKey();
+            result.append(mostCommon);
         }
 
         return result.toString();
@@ -48,15 +49,16 @@ public class Radio {
     public String computeLeastCommonCharacter() {
         StringBuilder result = new StringBuilder();
         List<List<Character>> allSignal = computeAllSignals();
-        for (int i = 0; i < allSignal.size(); i++) {
-            result.append(allSignal.get(i)
+        for (List<Character> characters : allSignal) {
+            char leastCommon = characters
                     .stream()
                     .collect(groupingBy(x -> x, counting()))
                     .entrySet()
                     .stream()
                     .min(comparingByValue())
-                    .get()
-                    .getKey());
+                    .orElseThrow()
+                    .getKey();
+            result.append(leastCommon);
         }
 
         return result.toString();
