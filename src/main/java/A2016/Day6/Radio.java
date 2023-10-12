@@ -10,19 +10,19 @@ import static java.util.stream.Collectors.*;
 
 @Data
 public class Radio {
-    private List<Signal> signals = new ArrayList<>();
+    private List<String> signals = new ArrayList<>();
     public void addSignal(String input) {
-        this.signals.add(new Signal(input));
+        this.signals.add(input);
     }
 
     private List<List<Character>> computeAllSignals() {
         List<List<Character>> allSignal = new ArrayList<>();
-        for (Signal signal: this.signals) {
-            for (int i = 0; i < signal.getOnde().length(); i++) {
+        for (String signal: this.signals) {
+            for (int i = 0; i < signal.length(); i++) {
                 if (allSignal.size() <= i ) {
                     allSignal.add(new ArrayList<>());
                 }
-                allSignal.get(i).add(signal.getOnde().charAt(i));
+                allSignal.get(i).add(signal.charAt(i));
             }
         }
         return allSignal;
