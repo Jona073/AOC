@@ -49,6 +49,12 @@ public class Ex1 {
                 .sum();
         System.out.println(countObit);
 
+        Planet you = planets.get(planets.indexOf(new Planet("YOU")));
+        Planet san = planets.get(planets.indexOf(new Planet("SAN")));
+
+        int distance = you.distanceFromPlanet(san);
+        System.out.println(distance);
+
     }
 
 
