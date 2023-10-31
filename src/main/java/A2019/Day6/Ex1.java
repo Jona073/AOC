@@ -16,9 +16,6 @@ public class Ex1 {
                 Planet planet1 = new Planet(tabPlanet[0]);
                 Planet planet2 = new Planet(tabPlanet[1]);
                 planet2.setOrbit(planet1);
-                if(planet1.getName().equals("XNR") || planet2.getName().equals("XNR") ) {
-                    System.out.println("tst");
-                }
                 if (planets.contains(planet1)) {
                     planet1 = planets.get(planets.indexOf(planet1));
                     planet2.setOrbit(planet1);
@@ -39,10 +36,6 @@ public class Ex1 {
 
             }
         }
-//        int directOrbit = (int) planets.stream()
-//                .filter(p -> p.getOrbit() != null)
-//                .count();
-//        System.out.println(directOrbit);
 
         int countObit = planets.stream()
                 .mapToInt(Planet::computeIndirectOrbite)
