@@ -3,10 +3,11 @@ package A2020.Day6;
 import lombok.Data;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 @Data
 public class Group {
@@ -25,26 +26,21 @@ public class Group {
     }
 
     public int getEveryoneYes() {
-        int count =0;
-        String allResponse = this.answersPeoples.stream()
-                .map(String::toString)
-                .collect(Collectors.joining(""));
-
-        Set<Character> questionsYes = new HashSet<>();
-
-        allResponse.chars().mapToObj(i->(char) i)
-                .forEach(questionsYes::add);
-
-        //Si le même charactere 
-        for (char carac : questionsYes) {
-            int occurrence = (int) allResponse.chars().filter(character -> character == carac).count();
-            if (occurrence == this.answersPeoples.size()) {
-                count++;
-            }
-        }
-        return count;
+        return (int) this.answersPeoples.stream()
+                // Concat les réponses en un seul String
+                .collect(Collectors.joining(""))
+                // Fait un IntStream du String
+                .chars()
+                // Map en char
+                .mapToObj(i -> (char) i)
+                // Transforme en Map<char,int>
+                .collect(groupingBy(character -> character, counting()))
+                // Récupère valeur de la map
+                .values().stream()
+                // Garde que les char(réponse) == nombre personne
+                .filter(nbOccurences -> nbOccurences == this.answersPeoples.size())
+                .count();
     }
-
 
 
 }
