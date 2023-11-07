@@ -18,11 +18,10 @@ public class Group {
     }
 
     public int getNumberYes() {
-        Set<Character> questionsYes = new HashSet<>();
-        this.answersPeoples.stream()
-                .flatMap(x-> x.chars().mapToObj(i -> (char) i))
-                .forEach(questionsYes::add);
-        return questionsYes.size();
+        return (int) this.answersPeoples.stream()
+                .flatMap(x -> x.chars().mapToObj(i -> (char) i))
+                .distinct()
+                .count();
     }
 
     public int getEveryoneYes() {

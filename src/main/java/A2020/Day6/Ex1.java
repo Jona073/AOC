@@ -13,7 +13,7 @@ public class Ex1 {
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2020/Day6/input.txt"))) {
             Group group = new Group();
             while ((line = br.readLine()) != null) {
-                if (line.equals("")) {
+                if (line.isBlank()) {
                     groupes.add(group);
                     group = new Group();
                 } else {
