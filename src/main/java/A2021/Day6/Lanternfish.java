@@ -9,15 +9,17 @@ import java.util.Optional;
 @AllArgsConstructor
 public class Lanternfish {
     private int timer;
+    private static final int CYCLE_NEW_BORN = 8;
+    private static final int CYCLE_NEXT_CYCLE = 6;
 
     public Optional<Lanternfish> newDay(){
-        Optional<Lanternfish> optionalLanternfish = Optional.empty();
+        Optional<Lanternfish> optionalNewBorn = Optional.empty();
         if (this.timer == 0) {
-            optionalLanternfish = Optional.of(new Lanternfish(8));
-            this.timer = 6;
+            optionalNewBorn = Optional.of(new Lanternfish(CYCLE_NEW_BORN));
+            this.timer = CYCLE_NEXT_CYCLE;
         } else {
             this.timer--;
         }
-        return optionalLanternfish;
+        return optionalNewBorn;
     }
 }

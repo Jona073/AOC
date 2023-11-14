@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class Ex {
     public static void main(String[] args) throws IOException {
         String line;
-        final int days = 256;
+        final int days = 80;
         try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/A2021/Day6/input.txt"))) {
             line = br.readLine();
         }
@@ -29,8 +29,8 @@ public class Ex {
         for (int i = 0; i < days; i++) {
             List<Lanternfish> saveLanternfishs = new ArrayList<>(lanternfishs);
             for (Lanternfish lanternfish: saveLanternfishs) {
-                Optional<Lanternfish> optionalLanternfish = lanternfish.newDay();
-                optionalLanternfish.ifPresent(lanternfishs::add);
+                Optional<Lanternfish> optionalNewBorn = lanternfish.newDay();
+                optionalNewBorn.ifPresent(lanternfishs::add);
             }
         }
         System.out.println(lanternfishs.size());
